@@ -1,0 +1,48 @@
+# tag_config
+# Specify set of resources and tags to be associated with the resources
+# To specify all resources, use 'all' as the resource identifier
+#########################################################################################
+# tag config file structure
+#########################################################################################
+# region: 'aws region'
+# operation: 'any one value from: UPDATE, DELETE, VALIDATE_KEY_ONLY, VALIDATE_KEY_VALUE'
+# outputDir: 'out'
+# tagParams:
+# - resources:
+#    type: 'any one value from ALL, SERVICE, ARN'
+#    items:
+#     - 's3'
+#     - 'ec2'
+#   tags:
+#   - key: 'key-1'
+#     value: 'value-1'
+#   - key: 'key-2'
+#     value: 'value-2'
+# - resources:
+#    type: 'SERVICE'
+#    items:
+#     - 's3'
+#     - 'ec2'
+#   tags:
+#   - key: 'key-1'
+#     value: 'value-1'
+#   - key: 'key-2'
+#     value: 'value-2'
+############################################################################################
+# Note: For 'VALIDATE_KEY_ONLY' operation just specify 'key' and no need for 'value'
+#       To perform operation on all the supported resources mention 'all' as the resource.
+#
+#       For Resource type 'ALL' - items are ignored.
+############################################################################################
+
+---
+region: 'us-west-2'
+operation: 'DELETE'
+outputDir: 'out'
+tagParams:
+- resources:
+    type: 'SERVICE'
+    items:
+    - 's3'
+  tags:
+  - key: 'ramo:test-key'
