@@ -1,10 +1,17 @@
 # aws-tag-automation
 CRUD operations on aws resource tags using aws group resource API
 
-### Operations:
+### Supported Operations:
 - Validate – validate the given tag configuration.
 - Update – Add/Update tag(s) for the given tag configuration.
 - Delete – Remove (Un-tag) given tag configuration.
+
+### AWS configuration prerequisites
+Below keys with their values are expected from the OS environment variables.
+```
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+```
 ### Tag YAML configuration
 
 ```
